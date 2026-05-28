@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:        #0b0b0b;
+  --bg1:       #111111;
+  --bg2:       #161616;
+  --bg3:       #1c1c1c;
+  --border:    #232323;
+  --border2:   #2e2e2e;
+  --dim:       #3a3a3a;
+  --muted:     #555555;
+  --sub:       #777777;
+  --text:      #c8c8c8;
+  --bright:    #e8e8e8;
+  --green:     #3fb950;
+  --green-dim: #1a3d20;
+  --amber:     #d29922;
+  --amber-dim: #3d2e0a;
+  --red:       #f85149;
+  --red-dim:   #3d1414;
+  --blue:      #58a6ff;
+  --blue-dim:  #0d2044;
+  --font:      'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 12px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--dim); }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }
+
+/* Selection */
+::selection { background: var(--blue-dim); color: var(--bright); }
+
+/* Blinking cursor */
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+.cursor { display: inline-block; width: 7px; height: 13px; background: var(--green); animation: blink 1.2s step-end infinite; vertical-align: middle; margin-left: 2px; }
+
+/* Scanline effect */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
